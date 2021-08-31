@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+
+body {
+    background: #cb2d3e;
+    background: linear-gradient(to right, #cb2d3e, #ef473a);
+  }
+  
+  .fab.fa-angular.HeaderIcon {
+    font-size: 51px;
+    color: #ffffff;
+  }
+  
+  .header_Heading {
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2.5rem;
+  }
+  
+  .header {
+    padding: 2.5rem;
+  }
+  
+  .registration_header {
+    padding: 1.5rem;
+  }
+  
+  .form_screen_selecter_div {
+    background: #fff;
+    height: 380px;
+    width: 464px;
+    box-shadow: 0px 0px 12px 1px #333;
+    border-radius: 28px;
+    padding: 3rem;
+    margin: 1rem;
+  }
+  
+  .dashboard_form_screen_selecter_div {
+    background: #fff;
+    height: 471px;
+    width: 441px;
+    box-shadow: 0px 0px 12px 1px #333;
+    border-radius: 28px;
+    padding: 3rem;
+    margin: 1rem;
+  }
+  
+  .registration_form_screen_div {
+    background: #fff;
+    height: 520px;
+    width: 994px;
+    box-shadow: 0px 0px 12px 1px #333;
+    border-radius: 28px;
+    padding: 3rem;
+    margin: 1rem;
+  }
+  
+  .login_form_screen_div {
+    background: #fff;
+    height: 351px;
+    width: 395px;
+    box-shadow: 0px 0px 12px 1px #333;
+    border-radius: 28px;
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .fab.fa-angular.form_screen_selecter_div_icon {
+    font-size: 81px;
+    color: #cb2d3e;
+  }
+  
+  .fab.fa-angular.dashboard_form_screen_selecter_div_icon {
+    font-size: 81px;
+    color: #cb2d3e;
+    padding-bottom: 1rem;
+  }
+  
+  .btn.btn-danger.form_screen_selecter_div_button {
+    width: 363.5px;
+    height: 58px;
+    font-size: 28px;
+    font-family: 'Archivo Black', sans-serif;
+    margin-top: 2rem;
+    border-radius: 18px;
+    box-shadow: 0px 0px 2px 0px #333;
+    text-decoration: none;
+  }
+  
+  .container.home_main_container {
+    padding: 4rem;
+  }
+  
+  .container.registration_main_container {
+    padding: 1rem;
+  }
+  
+  .registeration_form {
+    width: 870px;
+    margin-top: 1rem;
+  }
+  
+  .login_form {
+    width: 328px;
+    margin-top: 1rem;
+  }
+  
+  .btn.btn-danger.form-control.registeration_form_submit {
+    height: 44px;
+    font-size: 20px;
+    margin-top: 8px;
+  }
+  
+  label {
+    color: #cb2d3e;
+    font-weight: bold;
+  }
+  
+  /* You can add global styles to this file, and also import other style files */
