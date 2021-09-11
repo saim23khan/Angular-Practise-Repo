@@ -1,0 +1,8 @@
+<div class="card mb-3" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{todo.sno}} - {{todo.title}}</h5>
+      <p class="card-text">{{todo.desc}}</p>
+      <blockquote>{{todo.active}}</blockquote>
+      <button class="btn btn-danger" (click)="OnClick(todo)">Delete</button>
+    </div>
+</div>
