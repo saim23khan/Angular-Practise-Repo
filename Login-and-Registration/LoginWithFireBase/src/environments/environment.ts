@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firbase : {
+  firebase : {
     apiKey: "AIzaSyBBsamoH29deQgaHG0eRM_VkdKwSjjW1Ko",
     authDomain: "angularloginregister.firebaseapp.com",
     projectId: "angularloginregister",
