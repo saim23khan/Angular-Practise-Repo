@@ -29,6 +29,7 @@ export class AuthenticationService {
     return this.angularFireAuth.authState;
   }
   
+  //register a user with firebase createUserWithEmailAndPassword function
   createUser(user:any){
     console.log(user);
     this.angularFireAuth.createUserWithEmailAndPassword(user.email, user.password)
@@ -49,7 +50,8 @@ export class AuthenticationService {
     })
   }
 
-  //store user data from register form
+  //store user data from register form in firestore 
+  //1- fist create a doc if its not present then insert the set in it
   insertUserData(userInformations: firebase.default.auth.UserCredential){
     return this.database.doc(`RegisterdUsers/${userInformations.user?.uid}`).set({
       email: this.newUser.email,
