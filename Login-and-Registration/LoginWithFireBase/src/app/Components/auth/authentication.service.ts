@@ -31,7 +31,6 @@ export class AuthenticationService {
   
   //register a user with firebase createUserWithEmailAndPassword function
   createUser(user:any){
-    console.log(user);
     this.angularFireAuth.createUserWithEmailAndPassword(user.email, user.password)
     .then( userInformations => {
       this.newUser = user;
