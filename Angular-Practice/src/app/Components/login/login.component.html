@@ -1,8 +1,35 @@
 <p>login works!</p>
 <h1>{{getName(num)}}</h1>
 <h1>{{getArr(employess)}}</h1>
-<input type="text" />
-<input type="submit" value="Submit"
- (click)="onClick()"
- (mouseover)="numChnage()"
- (mouseleave)="numIncrease()">
+<h3>{{name}}</h3>
+<input type="text" (change)="onChange('sda')" />
+<input type="submit" value="Submit" (click)="onClick()" (mouseover)="numChnage()" (mouseleave)="numIncrease()">
+<br>
+
+<div *ngIf="!flag; then next else setFlag">
+  <!-- <input type="text" #mykey>
+  {{mykey.value}}
+  <input type="submit" value="submit" [disabled]="!mykey.value"> -->
+</div>
+
+<ng-template #next>
+  <h1>Next</h1>
+</ng-template>
+
+<ng-template #setFlag>
+  <h1>Set Flag</h1>
+</ng-template>
+
+
+<ul>
+  <li *ngFor="let employess of employess; index as i">
+    {{employess}} {{i}}
+  </li>
+</ul>
+
+<div [ngSwitch]="switchValue">
+  <div *ngSwitchCase="1">one</div>
+  <div *ngSwitchCase="2">two</div>
+  <div *ngSwitchCase="3">three</div>
+  <div *ngSwitchDefault>default</div>
+</div>
