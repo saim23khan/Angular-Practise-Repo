@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
   num:number = 12;
   employess: any[] = [typeof('213'),typeof(223),typeof(true),typeof(34.44)];
   name:string = '';
+  flag:boolean = false;
+  switchValue:number = 2;
   constructor() { }
 
   ngOnInit(): void {
