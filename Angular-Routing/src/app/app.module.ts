@@ -3,22 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [
-  {path:'about', component: AboutComponent}
-];
+import { AuthModule } from './auth/auth.module';
+import { AuthComponent } from './auth/auth.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    AuthModule,
+    RouterModule
   ],
-  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
