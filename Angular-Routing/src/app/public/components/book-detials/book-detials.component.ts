@@ -11,7 +11,7 @@ export class BookDetialsComponent implements OnInit {
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.route);
+    // console.log(this.route);
     this.route.params.subscribe((param) => {
       // console.log(params);
       this.id = param["id"];
