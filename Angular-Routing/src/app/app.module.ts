@@ -7,12 +7,14 @@ import { AuthModule } from './auth/auth.module';
 import { AuthComponent } from './auth/auth.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { PublicComponent } from './public/public.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    AuthComponent
+    AuthComponent,
+    PublicComponent
   ],
   imports: [
     BrowserModule,
