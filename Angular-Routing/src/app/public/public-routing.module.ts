@@ -7,15 +7,14 @@ import { BookDetialsComponent } from './components/book-detials/book-detials.com
 
 
 const routes: Routes = [
-  {path:'public',component: PublicComponent,children:[
-    {path:'all-books',component: AllBooksComponent},
-    {path:'book-details/:id',component: BookDetialsComponent},
-  ]}
+  { path: '', redirectTo: 'all-books', pathMatch: 'full' },
+  { path: 'all-books', component: AllBooksComponent },
+  { path: 'book-details/:id', component: BookDetialsComponent },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ],
   exports: [RouterModule],
 })
