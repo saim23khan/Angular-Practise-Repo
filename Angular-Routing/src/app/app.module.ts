@@ -10,6 +10,7 @@ import { PublicComponent } from './public/public.component';
 import { PublicModule } from './public/public.module';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SharedModule } from './shared/shared.module';
     PublicModule,
     SharedModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
