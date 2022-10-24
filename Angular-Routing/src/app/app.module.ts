@@ -8,18 +8,23 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { PublicComponent } from './public/public.component';
 import { PublicModule } from './public/public.module';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     AuthComponent,
+    PublicComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AuthModule,
+    PublicModule,
+    SharedModule,
     AppRoutingModule,
-    PublicModule
   ],
   providers: [],
   bootstrap: [AppComponent]
