@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-book-detials',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-detials.component.css']
 })
 export class BookDetialsComponent implements OnInit {
-
-  constructor() { }
+  id:number = 0;
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.route);
+    this.route.params.subscribe((param) => {
+      // console.log(params);
+      this.id = param["id"];
+    });
   }
 
 }
