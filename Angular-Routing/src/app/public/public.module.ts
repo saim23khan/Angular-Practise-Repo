@@ -10,13 +10,11 @@ import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    PublicComponent,
     AllBooksComponent,
     BookDetialsComponent,
     HomeComponent
   ],
   imports: [
-    CommonModule,
     PublicRoutingModule
   ]
 })
