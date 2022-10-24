@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicComponent implements OnInit {
 
+  bookId: number = 1;
   constructor() { }
 
   ngOnInit(): void {
