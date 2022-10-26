@@ -21,13 +21,15 @@ import { TableComponent } from './table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AddressComponent,
-    TableComponent
+    TableComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
