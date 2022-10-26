@@ -26,5 +26,6 @@ export class TableComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+    this.dataSource.data = [];
   }
 }
