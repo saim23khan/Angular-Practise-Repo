@@ -19,6 +19,26 @@ export class BooksService {
           "currency": "RS",
           "value": 100
         }
+      },
+      {
+        "id": 2,
+        "title": "Jaffar",
+        "totalPages": 100,
+        "auther": "J.k",
+        "price": {
+          "currency": "RS",
+          "value": 100
+        }
+      },
+      {
+        "id": 3,
+        "title": "Jaffar",
+        "totalPages": 100,
+        "auther": "J.k",
+        "price": {
+          "currency": "RS",
+          "value": 100
+        }
       }
     ];
   }
