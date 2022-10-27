@@ -4,11 +4,11 @@
     </button>
     <span>Book Store</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button routerLink="/">
+    <button mat-icon-button (click)="navigater('/')">
         <mat-icon>home</mat-icon>
     </button>
-    <button mat-button">All Books</button>
+    <button mat-button (click)="navigater('books')">All Books</button>
     <span class="example-spacer"></span>
-    <button mat-button routerLink="auth/login">Login</button>
-    <button mat-button routerLink="auth/signup">SignUp</button>
+    <button mat-button (click)="navigater('auth/login')">Login</button>
+    <button mat-button (click)="navigater('auth/signup')">SignUp</button>
 </mat-toolbar>
