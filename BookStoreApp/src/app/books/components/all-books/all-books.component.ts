@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigaterService } from 'src/app/shared/services/navigater.service';
 import { BooksModel } from '../../model/book.model';
 import { BooksService } from '../../service/books.service';
 
@@ -10,7 +11,7 @@ import { BooksService } from '../../service/books.service';
 export class AllBooksComponent implements OnInit {
 
   public books: BooksModel[] = [];
-  constructor(public bookService: BooksService) { }
+  constructor(public bookService: BooksService,public _navigationService: NavigaterService) { }
 
   ngOnInit(): void {
     this.books = this.bookService.getBooks();
