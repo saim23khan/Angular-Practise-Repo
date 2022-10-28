@@ -7,11 +7,13 @@ import { HowItWorksComponent } from './public/how-it-works/how-it-works.componen
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { AuthComponent } from './auth/auth.component';
 import { BooksComponent } from './books/books.component';
+import { AutherComponent } from './shared/components/auther/auther.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'how-it-works', component: HowItWorksComponent },
+  { path: 'auther', component: AutherComponent },
   { path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then(x => x.AuthModule) },
   { path: 'books', component: BooksComponent, loadChildren: () => import('./books/books.module').then(a => a.BooksModule) },
   { path: '**', component: NotFoundComponent },
