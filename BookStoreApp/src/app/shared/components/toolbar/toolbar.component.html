@@ -4,11 +4,11 @@
     </button>
     <span>Book Store</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button (click)="navigater('/')">
+    <button mat-icon-button (click)="_navigationService.navigater('/')">
         <mat-icon>home</mat-icon>
     </button>
-    <button mat-button (click)="navigater('books')">All Books</button>
+    <button mat-button (click)="_navigationService.navigater('books')">All Books</button>
     <span class="example-spacer"></span>
-    <button mat-button (click)="navigater('auth/login')">Login</button>
-    <button mat-button (click)="navigater('auth/signup')">SignUp</button>
+    <button mat-button (click)="_navigationService.navigater('auth/login')">Login</button>
+    <button mat-button (click)="_navigationService.navigater('auth/signup')">SignUp</button>
 </mat-toolbar>
