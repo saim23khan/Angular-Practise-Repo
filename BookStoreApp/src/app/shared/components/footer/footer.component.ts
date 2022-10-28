@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavigaterService } from '../../services/navigater.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,13 +9,9 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,public _navigationService: NavigaterService) { }
 
   ngOnInit(): void {
   }
-
-  //navigation functions
-  public navigater(url:string):void{
-    this.router.navigate([url]);
-  }
 }
+
