@@ -6,6 +6,8 @@ import { AllBooksComponent } from './components/all-books/all-books.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { BooksService } from './service/books.service';
 import { SharedModule } from '../shared/shared.module';
+import { RecentBooksComponent } from './components/recent-books/recent-books.component';
+import { BookCardComponent } from './components/book-card/book-card.component';
 
 
 
@@ -13,7 +15,9 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     BooksComponent,
     AllBooksComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    RecentBooksComponent,
+    BookCardComponent
   ],
   imports: [
     CommonModule,
