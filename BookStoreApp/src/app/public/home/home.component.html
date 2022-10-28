@@ -1,1 +1,5 @@
-<p>home works!</p>
+<p #title>home works!</p>
+<app-auther #authers (myData)="childData($event)"></app-auther>
+
+{{_dataService.data}}
+<!-- <button (click)="authers.setData(4)">set</button> -->
