@@ -9,8 +9,7 @@ import { AuthComponent } from './auth/auth.component';
 import { BooksComponent } from './books/books.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'how-it-works', component: HowItWorksComponent },
   { path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then(x => x.AuthModule) },
