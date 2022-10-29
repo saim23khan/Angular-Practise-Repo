@@ -1,4 +1,4 @@
-export interface PriceModel{
-    currency:string,
-    value: number
+export class PriceModel{
+    currency!:string;
+    value!: number;
 }
