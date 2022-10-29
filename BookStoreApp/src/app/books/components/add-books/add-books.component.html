@@ -15,7 +15,7 @@
       </mat-form-field><br><br>
       <mat-form-field appearance="legacy">
         <mat-label>Price</mat-label>
-        <input matInput placeholder="Placeholder" name="price" id="" ngModel>
+        <input matInput placeholder="Placeholder" name="price" id="" [(ngModel)]="model.price.value">
       </mat-form-field><br><br>
     <button type="submit" mat-raised-button color="primary">Submit</button>
 </form>
