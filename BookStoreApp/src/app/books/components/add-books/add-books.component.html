@@ -1,1 +1,23 @@
-<p>add-books works!</p>
+<h1>Add Books</h1>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmitForm(myForm.value)" class="add-book-form">
+    <mat-form-field appearance="legacy">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="title" name="title" id="" ngModel>
+      </mat-form-field><br><br>
+      <mat-form-field appearance="legacy">
+        <mat-label>Auther</mat-label>
+        <input matInput placeholder="Placeholder" name="auther" id="" ngModel>
+      </mat-form-field><br><br>
+      <mat-form-field appearance="legacy">
+        <mat-label>Pages</mat-label>
+        <input matInput placeholder="Placeholder" name="pages" id="" ngModel>
+      </mat-form-field><br><br>
+      <mat-form-field appearance="legacy">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Placeholder" name="price" id="" ngModel>
+      </mat-form-field><br><br>
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+</form>
+
+{{myForm.value | json}}
