@@ -12,10 +12,15 @@ import { BooksService } from '../../service/books.service';
 export class AddBooksComponent implements OnInit,AfterViewChecked {
 
   @ViewChild('myForm') myForms!: ElementRef;
-  
+  public model!: BooksModel;
   constructor(public _navigationService: Router,private bookService: BooksService) { }
 
   ngOnInit(): void {
+    this.model = new BooksModel();
+    this.model.price = {
+      value: 234,
+      currency: 'USD'
+    }
   }
 
   ngAfterViewChecked(): void {
