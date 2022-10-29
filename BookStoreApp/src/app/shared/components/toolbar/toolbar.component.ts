@@ -9,7 +9,7 @@ import { NavigaterService } from '../../services/navigater.service';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(private router:Router,public _navigationService: NavigaterService) { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
   }
