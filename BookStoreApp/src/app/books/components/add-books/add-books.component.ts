@@ -1,4 +1,5 @@
 import { AfterViewChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NavigaterService } from 'src/app/shared/services/navigater.service';
 import { BooksModel } from '../../model/book.model';
@@ -11,7 +12,8 @@ import { BooksService } from '../../service/books.service';
 })
 export class AddBooksComponent implements OnInit,AfterViewChecked {
 
-  @ViewChild('myForm') myForms!: ElementRef;
+  @ViewChild('myForm') myForms!: NgForm;
+ 
   public model!: BooksModel;
   constructor(public _navigationService: Router,private bookService: BooksService) { }
 
@@ -39,7 +41,11 @@ export class AddBooksComponent implements OnInit,AfterViewChecked {
     //   currency: value.currency,
     //   value: value.price,
     // }
-    this.bookService.addBooks(this.model);
+    if(this.myForms.valid){
+      this.bookService.addBooks(this.model);
+    }else{
+      alert('Error')
+    }
   }
 }
 
