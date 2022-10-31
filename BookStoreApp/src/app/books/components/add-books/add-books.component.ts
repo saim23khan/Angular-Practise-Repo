@@ -17,6 +17,9 @@ export class AddBooksComponent implements OnInit,AfterViewChecked {
 
   ngOnInit(): void {
     this.model = new BooksModel();
+    this.model.title = '';
+    this.model.auther = '';
+    this.model.totalPages = 0;
     this.model.price = {
       value: 234,
       currency: 'USD'
@@ -27,16 +30,16 @@ export class AddBooksComponent implements OnInit,AfterViewChecked {
     
   }
 
-  onSubmitForm(value:any): void{
-    const book: BooksModel = new BooksModel();
-    book.title = value.title;
-    book.auther = value.auther;
-    book.totalPages = value.pages;
-    book.price = {
-      currency: value.currency,
-      value: value.price,
-    }
-    this.bookService.addBooks(book);
+  onSubmitForm(): void{
+    // const book: BooksModel = new BooksModel();
+    // book.title = value.title;
+    // book.auther = value.auther;
+    // book.totalPages = value.pages;
+    // book.price = {
+    //   currency: value.currency,
+    //   value: value.price,
+    // }
+    this.bookService.addBooks(this.model);
   }
 }
 
