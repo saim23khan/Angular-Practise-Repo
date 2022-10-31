@@ -1,0 +1,8 @@
+<ul>
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="/user">User</a></li>
+  <li><a routerLink="/contact">contact</a></li>
+  
+    <li *ngIf="this.service.isLoggedIn()"><a (click)="logout()">logout</a></li>
+  </ul>
+<router-outlet></router-outlet>
