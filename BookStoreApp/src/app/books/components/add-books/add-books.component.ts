@@ -21,7 +21,7 @@ export class AddBooksComponent implements OnInit,AfterViewChecked {
     this.model.auther = '';
     this.model.totalPages = 0;
     this.model.price = {
-      value: ,
+      value: 0,
       currency: 'USD'
     }
   }
