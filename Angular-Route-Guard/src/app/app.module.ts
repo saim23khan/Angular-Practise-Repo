@@ -8,6 +8,8 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ContactComponent } from './contact/contact.component';
+import { ViewComponent } from './view/view.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     UserComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    ViewComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
