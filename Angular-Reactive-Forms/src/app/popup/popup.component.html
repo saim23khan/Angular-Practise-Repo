@@ -1,1 +1,39 @@
-<p>popup works!</p>
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Add Employee</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form [formGroup]="formGroup" (ngSubmit)="saveEmployee()">
+			<div class="mb-3">
+				<input type="text" placeholder="code" class="form-control" formControlName="code"/>
+			</div>
+            <div class="mb-3">
+				<input type="text" placeholder="name" class="form-control" formControlName="name"/>
+                <span *ngIf="name && name.invalid" class="errormessage">Enter Correct Name</span>
+			</div>
+            <div class="mb-3">
+				<input type="text" placeholder="email" class="form-control" formControlName="email"/>
+			</div>
+            <div class="mb-3">
+				<input type="text" placeholder="phone" class="form-control" formControlName="phone"/>
+			</div>
+            <div class="mb-3">
+				<select class="form-control" formControlName="designation">
+                    <option selected disabled>Designation</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+			</div>
+            <span [ngClass]="erorClass">{{errorMessage}}</span>
+            <div class="modal-footer">
+                <button [disabled]="formGroup.invalid" type="submit" class="btn btn-outline-dark">Save</button>
+            </div>
+		</form>
+	</div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Add Books</button>
+
+<hr />
