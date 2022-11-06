@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { MasterService } from '../services/master.service';
 
 @Component({
   selector: 'app-popup',
@@ -12,17 +13,15 @@ export class PopupComponent implements OnInit {
 	closeResult = '';
   errorMessage = "";
   erorClass = "";
+  serverResponce:any;
 
-	constructor(private modalService: NgbModal) {}
+	constructor(private modalService: NgbModal,private apiService: MasterService) {}
   ngOnInit(): void {
    
   }
   //reactive form
   formGroup = new FormGroup({
-    code:new FormControl({
-      value:'',
-      disabled:true
-    }),
+    code:new FormControl(),
     name:new FormControl('',Validators.compose([
       Validators.required,
       Validators.minLength(5)
@@ -37,7 +36,13 @@ export class PopupComponent implements OnInit {
 
   saveEmployee() {
     if(this.formGroup.valid){
-
+      //save employee in database
+      console.log(this.formGroup.value);
+      this.apiService.PostEmployee(this.formGroup.getRawValue()).subscribe(value => {
+        this.serverResponce = value;
+        console.log(this.serverResponce);
+        // if(this.serverResponce == ''){}
+      });
     }else{
       this.errorMessage = "Please Enter Valid Data!!";
       this.erorClass = "errormessage";
