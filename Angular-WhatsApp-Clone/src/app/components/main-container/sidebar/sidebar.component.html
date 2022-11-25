@@ -1,0 +1,31 @@
+<section class="sidebar">
+    <div class="sidebar__header">
+        <img src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375__340.png"/>
+        <div class="sidebar__header__icons">
+            <button mat-icon-button>
+                <mat-icon>donut_large</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>chat</mat-icon>
+            </button>
+            <button mat-icon-button [mat-menu-trigger-for]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>Logout</button>
+            </mat-menu>
+        </div>
+    </div>
+    <div class="sidebar__search">
+      <div class="sidebar__search__content">
+        <form>
+          <button mat-icon-button>
+            <mat-icon>search_outl</mat-icon>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="sidebar__content">
+
+    </div>
+</section>
