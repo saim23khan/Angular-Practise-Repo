@@ -1,6 +1,6 @@
 <section class="sidebar">
     <div class="sidebar__header">
-        <img src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375__340.png"/>
+        <img mat-card-avatar src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375__340.png"/>
         <div class="sidebar__header__icons">
             <button mat-icon-button>
                 <mat-icon>donut_large</mat-icon>
@@ -18,14 +18,18 @@
     </div>
     <div class="sidebar__search">
       <div class="sidebar__search__content">
-        <form>
-          <button mat-icon-button>
+        <form #form="ngForm" (ngSubmit)="onSubmitForm(form)" >
+          <button mat-icon-button class="sidebar__search__content__icon">
             <mat-icon>search_outl</mat-icon>
           </button>
+          <input type="text" class="sidebar__search__content__input" name="search" placeholder="Search or Start new Chat" ngModel/>
         </form>
+        <button type="submit" style="display: none"></button>
       </div>
     </div>
     <div class="sidebar__content">
-
+        <ng-container>
+            <app-sidebar-content></app-sidebar-content>
+        </ng-container>
     </div>
 </section>
