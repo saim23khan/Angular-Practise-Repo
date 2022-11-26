@@ -1,1 +1,35 @@
-<p>chat-area works!</p>
+<section class="chat">
+    <div class="chat__header">
+        <img src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375__340.png" alt="avatar" mat-card-avatar />
+        <div class="chat__header__room-name">
+            <h4>{{'ROOM NAME'}}</h4>
+        </div>
+        <div class="chat__header__right">
+            <button mat-icon-button>
+                <mat-icon>search_outline</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>attach_file</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>more_vert</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div class="chat__body">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="chat__footer">
+        <button mat-icon-button>
+            <mat-icon>mood</mat-icon>
+        </button>
+        <form #form="ngForm" (ngSubmit)="formSubmit(form)">
+            <input name="message" ngModel placeholder="Type a Message" type="text" class="chat__footer__send-mesage" />
+        </form>
+        <button mat-icon-button>
+            <mat-icon>mic</mat-icon>
+        </button>
+    </div>
+</section>
