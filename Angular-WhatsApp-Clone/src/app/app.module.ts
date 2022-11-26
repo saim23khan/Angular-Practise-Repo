@@ -11,8 +11,8 @@ import { ChatAreaComponent } from './components/main-container/chat-area/chat-ar
 import { ChatDefaultPageComponent } from './components/main-container/chat-area/chat-default-page/chat-default-page.component';
 import { ChatRoomComponent } from './components/main-container/chat-area/chat-room/chat-room.component';
 import { MaterialModule } from './shared/material.module';
-import { RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,12 +25,13 @@ import { LoginComponent } from './components/login/login.component';
     ChatRoomComponent,
     LoginComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
