@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit{
 
+  constructor() {
+  }
+
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
+  }
+
+  onSubmitForm(form:NgForm):void{
+    console.log(form.value.search);
+  }
 }
