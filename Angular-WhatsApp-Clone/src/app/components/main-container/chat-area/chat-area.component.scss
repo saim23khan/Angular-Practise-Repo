@@ -27,5 +27,52 @@
                 font-size: small;
             }
         }
+
+        &__right > button mat-icon{
+            color: gray;
+            font-size: 24px;
+        }
+
+        &__right > button mat-icon.file{
+            transform: rotateY(180deg) rotateZ(-45deg);
+        }
+    }
+
+    &__body{
+        flex: 1;
+        background-image: url('https://i.pinimg.com/600x315/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg');
+        background-repeat: repeat;
+        overflow-y: scroll;
+        background-position: center;
+    }
+
+    &__footer{
+        height: 62px;
+        background-color: #F8F8F8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid lightgray;
+
+        button mat-icon{
+            color: grey;
+        }
+
+        form{
+            display: flex;
+            flex: 1;
+        }
+
+        &__send-message{
+            outline: none;
+            border: 1px solid lightgray;
+            border-radius: 38px;
+            flex: 1;
+            padding: 10px 10px 10px 20px;
+
+            &::placeholder{
+                padding-left: 0.27rem;
+            }
+        }
     }
 }
