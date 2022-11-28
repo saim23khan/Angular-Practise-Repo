@@ -1,0 +1,11 @@
+<form [formGroup]="formGroup" (ngSubmit)="saveEmployee()">
+  <div class="mb-3">
+    <input type="email"  placeholder="email" class="form-control" formControlName="email"/>
+  </div>
+  <div class="mb-3">
+    <input type="password"  placeholder="password" class="form-control" formControlName="password"/>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-outline-dark">Login</button>
+  </div>
+</form>
