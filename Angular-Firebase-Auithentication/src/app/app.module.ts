@@ -10,6 +10,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CommonGuard} from "./guards/common.guard";
+import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,13 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+        provide: FIREBASE_OPTIONS,
+        useValue: environment.firebaseConfig
+      },
+    CommonGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
