@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CommonService} from "../../services/common.service";
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  // constructor(private firebaseService:CommonService) {
+  // }
 
+  login():void{
+    // this.firebaseService.loginWithGoogle();
+  }
 }
