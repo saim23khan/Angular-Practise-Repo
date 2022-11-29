@@ -14,10 +14,11 @@ import { MaterialModule } from './shared/material.module';
 import { LoginComponent } from './components/login/login.component';
 import {FormsModule} from "@angular/forms";
 import {environment} from "../environments/environment";
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-// import {AngularFireAuthModule} from "@angular/fire/compat/auth";
-// import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
-
+import {ChatGuard} from "./guards/chat.guard";
+import {provideFirebaseApp,initializeApp} from "@angular/fire/app";
+import {getFirestore, provideFirestore} from "@angular/fire/firestore";
+import firebase from "firebase/compat";
+import {getAuth, provideAuth} from "@angular/fire/auth";
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,12 +36,19 @@ import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    provideFirebaseApp(()=> initializeApp(environment.firebaseConfig)),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    // provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
     // AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule
+    // AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: FIREBASE_OPTIONS,
+    //   useValue: environment.firebaseConfig
+    // },
+    // ChatGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
