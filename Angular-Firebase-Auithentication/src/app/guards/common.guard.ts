@@ -16,11 +16,13 @@ export class CommonGuard implements CanActivate {
     return this.auth.authState.pipe(map(user=>user!=null),
       tap(value => {
         if(!value){
-          console.log('log')
           this.router.navigateByUrl('login').then();
           return value;
         }else{
-          console.log('log2')
+          // console.log(this.auth.user.forEach(value1 => {
+          //   console.log(value1?.uid)
+          // }))
+          console.log(value)
           return value;
         }
       })
