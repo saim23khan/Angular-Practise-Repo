@@ -21,7 +21,7 @@ export class CommonService {
       if(user){
         this._user = user;
         console.log(this._user);
-        // localStorage.setItem('user',JSON.stringify(this._user));
+        localStorage.setItem('user',JSON.stringify(this._user));
         this.router.navigateByUrl('/login').then();
       }else{
         localStorage.setItem('user','');
