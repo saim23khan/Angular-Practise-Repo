@@ -22,7 +22,7 @@ export class CommonService {
     this.auth.authState.subscribe(user =>{
       if(user){
         user = user;
-        // localStorage.setItem('user',JSON.stringify(this._user));
+        localStorage.setItem('user',JSON.stringify(user));
         this.router.navigateByUrl('/login').then();
       }else{
         localStorage.setItem('user','');
@@ -38,7 +38,7 @@ export class CommonService {
     this.auth.signInWithPopup(new GoogleAuthProvider())
       .then((data) => {
         if(data.user){
-          // this._user = data.user;
+          // user = data.user;
           // localStorage.setItem('user',JSON.stringify(this._user));
           this.router.navigateByUrl('').then();
         }else{
