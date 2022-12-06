@@ -1,28 +1,31 @@
 import { Injectable } from '@angular/core';
-import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/compat/firestore";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {BehaviorSubject, Observable} from "rxjs";
 import {Router} from "@angular/router";
-import firebase from "firebase/compat";
-import { GoogleAuthProvider } from 'firebase/auth';
-// import {user} from "@angular/fire/auth";
-import User = firebase.User;
+import {
+  Auth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  onAuthStateChanged
+} from "@angular/fire/auth";
+
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
+  private _user = this.auth.currentUser;
   private pathParamState = new BehaviorSubject<string>('');
   pathParam: Observable<string>;
   constructor(
-              private auth: AngularFireAuth,
+              private auth: Auth,
               private router:Router,
               ) {
     this.pathParam = this.pathParamState.asObservable();
 
-    this.auth.authState.subscribe(user =>{
+    onAuthStateChanged(auth,(user)=>{
       if(user){
-        user = user;
-        localStorage.setItem('user',JSON.stringify(user));
+        this._user = user;
+        console.log(this._user);
+        localStorage.setItem('user',JSON.stringify(this._user));
         this.router.navigateByUrl('/login').then();
       }else{
         localStorage.setItem('user','');
@@ -35,16 +38,13 @@ export class CommonService {
   }
 
   loginWithGoogle():void{
-    this.auth.signInWithPopup(new GoogleAuthProvider())
-      .then((data) => {
-        if(data.user){
-          // user = data.user;
-          // localStorage.setItem('user',JSON.stringify(this._user));
-          this.router.navigateByUrl('').then();
-        }else{
-          localStorage.setItem('user','');
-        }
-      }).catch((error:any) =>{});
+    signInWithPopup(this.auth,new GoogleAuthProvider()).then(result=>{
+      console.log(result.user);
+      alert('SignIn With Google');
+      this.router.navigateByUrl('').then();
+    }).catch(error=>{
+      alert(error);
+    });
   }
 
   logOut():void{
@@ -54,7 +54,12 @@ export class CommonService {
     });
   }
 
-  // getUser():User{
-  //   return user;
+  // getUser():boolean{
+  //   return this._user.;
   // }
+}
+
+export interface RoomData{
+  name: String,
+  id?: string
 }
