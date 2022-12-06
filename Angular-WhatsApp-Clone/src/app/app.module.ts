@@ -17,8 +17,8 @@ import {environment} from "../environments/environment";
 import {ChatGuard} from "./guards/chat.guard";
 import {provideFirebaseApp,initializeApp} from "@angular/fire/app";
 import {getFirestore, provideFirestore} from "@angular/fire/firestore";
-import firebase from "firebase/compat";
 import {getAuth, provideAuth} from "@angular/fire/auth";
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,17 +37,15 @@ import {getAuth, provideAuth} from "@angular/fire/auth";
     MaterialModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    // provideFirestore(() => getFirestore()),
+    provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    // AngularFireAuthModule,
   ],
   providers: [
-    // {
-    //   provide: FIREBASE_OPTIONS,
-    //   useValue: environment.firebaseConfig
-    // },
-    // ChatGuard
+    {
+      provide: FIREBASE_OPTIONS,
+      useValue: environment.firebaseConfig
+    },
+    ChatGuard
   ],
   bootstrap: [AppComponent]
 })
