@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {NgForm} from "@angular/forms";
+import { CommonService, RoomData } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +10,12 @@ import {NgForm} from "@angular/forms";
 })
 export class SidebarComponent implements OnInit{
 
-  constructor() {
+  randomSeed : any[] = [];
+  roomData: RoomData[] = [];
+
+  constructor(private fireStore: AngularFirestore,
+    private firebaseService: CommonService){
+
   }
 
   ngOnInit(): void {
