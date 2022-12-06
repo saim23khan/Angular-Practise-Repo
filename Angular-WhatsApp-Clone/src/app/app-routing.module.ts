@@ -20,7 +20,7 @@ const routes: Routes = [
         component: ChatDefaultPageComponent
       }
     ],
-    // canActivate: [ChatGuard]
+    canActivate: [ChatGuard]
   },
   {
     path:'login',
