@@ -7,10 +7,10 @@ import {CommonService} from "../../services/common.service";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  // constructor(private firebaseService:CommonService) {
-  // }
+  constructor(private firebaseService:CommonService) {
+  }
 
   login():void{
-    // this.firebaseService.loginWithGoogle();
+    this.firebaseService.loginWithGoogle();
   }
 }
