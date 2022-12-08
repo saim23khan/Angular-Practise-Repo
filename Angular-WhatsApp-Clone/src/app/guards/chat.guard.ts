@@ -22,7 +22,7 @@ export class ChatGuard implements CanActivate {
       map(user=>user!=null),
       tap(value => {
           if(!value){
-            this.router.navigateByUrl('login').then();
+            this.router.navigateByUrl('login/').then();
             return value;
           }else{
             return value;
