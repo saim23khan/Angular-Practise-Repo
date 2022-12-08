@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 import {NgForm} from "@angular/forms";
 import { map } from 'rxjs';
@@ -20,21 +20,25 @@ export class SidebarComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    // collection(this.fireStore,'rooms').snapshotChanges()
-    // .pipe(
-    //   map(actions=>{
-    //     return actions.map(a=>{
-    //       return {
-    //         id:a.payload.doc.id,
-    //         //@ts-ignore
-    //         ...a.payload.doc.data()
-    //       }
-    //     })
-    //   })
-    // ).subscribe((rooms:RoomData[])=>{
-    //   this.roomData = rooms;
-    //   console.log(this.roomData)
-    // });
+  //  console.log(collectionData(collection(this.fireStore,'rooms')))
+    collectionData(collection(this.fireStore,'rooms')) 
+    .pipe(
+      map(actions=>{
+        return actions.map((a:any)=>{
+          const data = a.payload.doc.data()
+          const id = a.payload.doc.id
+          return {id, ...data}
+        })
+      })
+    )
+    .subscribe((rooms:RoomData[])=>{
+      this.roomData = rooms;
+      console.log(this.roomData)
+    });
+
+    // collectionData(collection(this.fireStore,'rooms'))
+    // .subscribe((rooms:RoomData[])=>{
+      
   }
 
   onSubmitForm(form:NgForm):void{
