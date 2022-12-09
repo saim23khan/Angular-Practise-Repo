@@ -1,0 +1,65 @@
+<div class="container registration_main_container">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex flex-row justify-content-center registration_header"><i class="fab fa-angular HeaderIcon"></i>
+        <h1 class="header_Heading">&nbsp;Registeration</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex flex-column justify-content-center align-items-center">
+      <div class="row" *ngIf="authError">
+        <div class="col alert alert-danger">
+          {{ authError?.message }}
+        </div>
+      </div>
+      <div class="d-flex flex-column align-items-center registration_form_screen_div">
+        <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)" class="registeration_form">
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group"><label>First Name</label><input ngModel #firstname="ngModel" name="firstname" type="text" class="form-control" id="firstName" required></div>
+            </div>
+            <div class="col">
+              <div class="form-group"><label>Last Name</label><input ngModel #lastname="ngModel" name="lastname" type="text" class="form-control" id="lastName" required></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group"><label>Email</label><input ngModel #email="ngModel" name="email" type="email" class="form-control" required></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group"><label>Phone</label><input type="tel" ngModel #gender="ngModel" name="telephone" class="form-control" required></div>
+            </div>
+            <div class="col">
+              <div class="form-group"><label>Gender</label><select ngModel #gender="ngModel" name="gender" class="form-control" required>
+                  <option [disabled]="true" value="Select Gender" default>Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group"><label>Password</label><input ngModel #password="ngModel" name="password" type="password" class="form-control" required></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group"><button class="btn btn-danger form-control registeration_form_submit" type="submit">Register</button></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="d-flex flex-row justify-content-center">
+                <p>already have a account?&nbsp; &nbsp;&nbsp;</p><a class="text-danger" (click) = "NavigateToLogin()">Login</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
