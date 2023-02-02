@@ -1,9 +1,9 @@
 <form [formGroup]="formGroup" (ngSubmit)="loginEmployee()">
   <div class="mb-3">
-    <input type="email"  placeholder="email" class="form-control" formControlName="email"/>
+    <input type="email" placeholder="email" class="form-control" formControlName="email" />
   </div>
   <div class="mb-3">
-    <input type="password"  placeholder="password" class="form-control" formControlName="password"/>
+    <input type="password" placeholder="password" class="form-control" formControlName="password" />
   </div>
   <div class="modal-footer">
     <button type="submit" class="btn btn-outline-dark">Login</button>
@@ -12,3 +12,4 @@
 
 <button (click)="googleLogin()">Google Login</button>
 
+<p><a href="/register">New User</a></p>
