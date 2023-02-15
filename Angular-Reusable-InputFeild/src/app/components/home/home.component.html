@@ -1,0 +1,9 @@
+<p>home works!</p>
+
+
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <app-input-feild type="text" label="name" [controlName]="'name'"  [formGroup]="formGroup" />
+  <app-input-feild type="email" label="email" [controlName]="'email'"  [formGroup]="formGroup" />
+  <app-input-feild type="password" label="password" [controlName]="'password'"  [formGroup]="formGroup" />
+  <input type="submit" value="Submit"/>
+</form>

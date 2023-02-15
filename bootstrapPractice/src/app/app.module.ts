@@ -6,6 +6,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {BootstrapModule} from "./shared/bootstrap/bootstrap.module";
 import {HeaderModule} from "./shared/header/header.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {RouterModule} from "@angular/router";
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,8 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     BootstrapModule,
-    HeaderModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   exports: [

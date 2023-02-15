@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import {AppModule} from "../../app.module";
 import {HeaderModule} from "../../shared/header/header.module";
+import {AppRoutingModule} from "../../app-routing.module";
 
 
 @NgModule({

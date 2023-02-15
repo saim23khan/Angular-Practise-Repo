@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bootstrapPractice": {
+    "Angular-Reusable-InputFeild": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,24 +17,22 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bootstrap-practice",
+            "outputPath": "dist/angular-reusable-input-feild",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -63,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bootstrapPractice:build:production"
+              "browserTarget": "Angular-Reusable-InputFeild:build:production"
             },
             "development": {
-              "browserTarget": "bootstrapPractice:build:development"
+              "browserTarget": "Angular-Reusable-InputFeild:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bootstrapPractice:build"
+            "browserTarget": "Angular-Reusable-InputFeild:build"
           }
         },
         "test": {
@@ -85,12 +87,13 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -99,6 +102,6 @@
     }
   },
   "cli": {
-    "analytics": "6e1cc478-fdf6-4920-b75b-5f72ae1555f0"
+    "analytics": "198c0537-7d32-4bd3-b4ee-e0e1521d6674"
   }
 }
