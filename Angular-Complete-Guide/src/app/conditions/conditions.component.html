@@ -1,0 +1,8 @@
+<p>conditions works!</p>
+<p *ngIf="flag; else other">
+    {{flag}}
+</p>
+
+<ng-template #other>
+    <p>Flag is false</p>
+</ng-template>

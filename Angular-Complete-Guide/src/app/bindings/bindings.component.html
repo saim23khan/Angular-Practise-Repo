@@ -1,0 +1,10 @@
+<p>bindings works!</p>
+<h2>Event Binding</h2>
+<input type="text" class="form-control" (input)="onUpdate($event)" />
+<h2>Two way binding</h2>
+<input type="text" class="form-control" [(ngModel)]="name" />
+<p>flag = {{flag}}</p>
+<h2>String interpolation</h2>
+<p>{{name}}</p>
+<h2>Property Binding</h2>
+<button class="btn btn-primary" [disabled]="!flag" (click)="onChangeFlag()">Toggle Flag</button>
