@@ -1,1 +1,21 @@
-<p>directives works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">Only Odd</button>
+            <br>
+            <ul class="list-group">
+                <div *ngIf="onlyOdd">
+                    <li class="list-group-item" *ngFor="let numbers of oddNumbers">
+                        {{numbers}}
+                    </li>
+                </div>
+                <div *ngIf="!onlyOdd">
+                    <li [ngStyle]="{backgroundColor:'red'}" class="list-group-item" *ngFor="let numbers of evenNumbers">
+                        {{numbers}}
+                    </li>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+</div>
