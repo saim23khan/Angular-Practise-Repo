@@ -8,14 +8,18 @@ import { FormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { ConditionsComponent } from './conditions/conditions.component';
 import { ListingComponent } from './listing/listing.component';
+import { CustomDirective } from './directives/directive/custome.directive';
+import { RefractoredDirectiveDirective } from './directives/directive/refractored-directive.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     BindingsComponent,
     DirectivesComponent,
+    CustomDirective,
     ConditionsComponent,
-    ListingComponent
+    ListingComponent,
+    RefractoredDirectiveDirective
   ],
   imports: [
     BrowserModule,
