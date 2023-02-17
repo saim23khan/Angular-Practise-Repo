@@ -10,6 +10,7 @@ import { ConditionsComponent } from './conditions/conditions.component';
 import { ListingComponent } from './listing/listing.component';
 import { CustomDirective } from './directives/directive/custome.directive';
 import { RefractoredDirectiveDirective } from './directives/directive/refractored-directive.directive';
+import { ConditionalDirectiveDirective } from './directives/directive/conditional-directive.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RefractoredDirectiveDirective } from './directives/directive/refractore
     CustomDirective,
     ConditionsComponent,
     ListingComponent,
-    RefractoredDirectiveDirective
+    RefractoredDirectiveDirective,
+    ConditionalDirectiveDirective
   ],
   imports: [
     BrowserModule,
