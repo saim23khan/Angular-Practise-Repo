@@ -7,5 +7,5 @@ import { CustomStylingDirective } from 'src/app/directive/custom-styling.directi
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  @Input() directive!: CustomStylingDirective;
+  // @Input() directive!: CustomStylingDirective;
 }
