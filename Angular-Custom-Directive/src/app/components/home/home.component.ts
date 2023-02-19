@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Directive, Input } from '@angular/core';
 import { CustomStylingDirective } from 'src/app/directive/custom-styling.directive';
 
 @Component({
@@ -7,5 +7,11 @@ import { CustomStylingDirective } from 'src/app/directive/custom-styling.directi
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  // @Input() directive!: CustomStylingDirective;
+  @Input() customStylingDirective!: CustomStylingDirective;
+  // @Input() class!: string;
+  extraClass: string = 'custom';
+  constructor() {
+  }
+
+
 }

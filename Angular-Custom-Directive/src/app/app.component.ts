@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CustomStylingDirective} from "./directive/custom-styling.directive";
 
 @Component({
   selector: 'app-root',

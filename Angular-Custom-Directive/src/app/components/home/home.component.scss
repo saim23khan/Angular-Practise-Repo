@@ -5,6 +5,9 @@ p {
 }
 
 .custom {
-    color: blue !important;
-    margin-left: 25px;
+    p {
+        color: blue;
+        margin-left: 25px;
+        padding: 0;
+    }
 }

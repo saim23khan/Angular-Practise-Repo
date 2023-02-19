@@ -5,7 +5,8 @@ import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Render
 })
 export class CustomStylingDirective implements OnInit {
   // @Input() styleSheet!: string;
-  @Input('appCustomStyling') class: string = "newclass";
+  @Input('appCustomStyling') class!: string;
+  // @Input() class!: string;
   // @Input() defaultColor: string = 'transparent';
   // @Input('appRefractoredDirective') highlightColor: string = 'blue';
 

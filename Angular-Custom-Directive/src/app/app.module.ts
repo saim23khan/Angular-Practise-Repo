@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { CustomStylingDirective } from './directive/custom-styling.directive';
+import { DynamicDirectiveDirective } from './directive/dynamic-directive.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CustomStylingDirective
+    CustomStylingDirective,
+    DynamicDirectiveDirective
   ],
   imports: [
     BrowserModule,
