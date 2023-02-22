@@ -1,1 +1,10 @@
 <p>home works!</p>
+
+<button (click)="onClick()">Insert Data</button>
+<button (click)="onClickClear()">Clear Data</button>
+
+<ul>
+  <li *ngFor="let d of data" id="{{d.id}}">
+    {{d.name}}
+  </li>
+</ul>
