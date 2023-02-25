@@ -10,19 +10,19 @@ import {
 import firebase from "firebase/compat/app";
 import { FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
   private _user = this.auth.currentUser;
-  constructor(private auth: Auth, private router: Router) {
+  constructor(private auth: Auth, private router: Router,private userServices:UserService) {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this._user = user;
-        console.log(this._user);
-        localStorage.setItem('user', JSON.stringify(this._user));
-        this.router.navigateByUrl('/login').then();
+        this.userServices.user = this._user;
+        this.router.navigateByUrl('').then();
       } else {
         localStorage.setItem('user', '');
       }
@@ -47,6 +47,7 @@ export class CommonService {
       console.log(result.user);
       this.router.navigateByUrl('').then();
       alert('SignIn With Google');
+      this.userServices.user = result.user;
     }).catch(error => {
       alert(error);
     });
