@@ -22,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SliderComponent } from './slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     HeaderComponent,
     AddressComponent,
     TableComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     ReactiveFormsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    // MatCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

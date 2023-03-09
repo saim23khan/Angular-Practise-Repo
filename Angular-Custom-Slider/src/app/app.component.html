@@ -1,0 +1,16 @@
+<div>Some tags before</div>
+<owl-carousel-o [options]="customOptions">
+  <ng-template *ngFor="let product of products" carouselSlide>
+    <app-product ids=product/>
+  </ng-template>
+  <!-- <ng-template carouselSlide>
+    <img src="../favicon.ico"/>
+  </ng-template>
+  <ng-template carouselSlide>
+    <img src="../favicon.ico"/>
+  </ng-template>
+  <ng-template carouselSlide>
+    <img src="../favicon.ico"/>
+  </ng-template> -->
+</owl-carousel-o>
+<div>Some tags after</div>
