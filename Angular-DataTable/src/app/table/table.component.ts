@@ -55,23 +55,11 @@ export class TableComponent implements OnInit{
       pagingType: 'full_numbers',
       pageLength: 10,
       columns: [
-        { title: 'ID', data: 'id' },
-        { title: 'Name', data: 'name' },
-        { title: 'Email', data: 'email' },
-        { title: 'Phone', data: 'phone' },
-        { title: 'Action' }
-      ]
-    };
-
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 10,
-      columns: [
-        { title: 'ID', data: 'id' },
-        { title: 'Name', data: 'name' },
-        { title: 'Email', data: 'email' },
-        { title: 'Phone', data: 'phone' },
-        { title: 'Action' }
+        {title: 'ID', data: 'id'},
+        {title: 'Name', data: 'name'},
+        {title: 'Email', data: 'email'},
+        {title: 'Phone', data: 'phone'},
+        {title: 'Action'}
       ]
     };
   }
