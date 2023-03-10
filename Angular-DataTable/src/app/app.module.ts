@@ -4,17 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
-import DataTables from 'datatables.net-bs4';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataTablesModule } from 'angular-datatables';
+import { TableDetailsComponent } from './table-details/table-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent
+    TableComponent,
+    TableDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DataTables
+    BrowserAnimationsModule,
+    DataTablesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
