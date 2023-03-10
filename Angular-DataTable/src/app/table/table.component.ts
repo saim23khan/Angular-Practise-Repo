@@ -10,11 +10,21 @@ export class TableComponent implements OnInit{
   // @ViewChild(DataTableDirective, { static: false })
   // dataTable!: DataTableDirective;
   dtOptions: DataTables.Settings = {};
+  dtOptions2: DataTables.Settings = {};
+
   users = [
     { id: 1, name: 'John Doe', email: 'john.doe@example.com', phone: '555-555-5555' },
     { id: 2, name: 'Jane Doe', email: 'jane.doe@example.com', phone: '555-555-5555' },
     { id: 3, name: 'Bob Smith', email: 'bob.smith@example.com', phone: '555-555-5555' },
     { id: 4, name: 'Alice Smith', email: 'alice.smith@example.com', phone: '555-555-5555' },
+    { id: 5, name: 'John Doe', email: 'asd@asdasd.com', phone: '555-555-5555' },
+    { id: 6, name: 'Jane Doe', email: 'sfds@asd.com', phone: '555-555-5555' },
+    { id: 7, name: 'Bob Smith', email: 'sfds@asd.com', phone: '555-555-5555' },
+    { id: 8, name: 'Alice Smith', email: 'sfds@asd.com', phone: '555-555-5555' },
+    { id: 9, name: 'John Doe', email: 'sfds@asd.com', phone: '555-555-5555' },
+    { id: 10, name: 'Jane Doe', email: 'sfds@asd.com', phone: '555-555-5555' },
+    { id: 11, name: 'Bob Smith', email: 'sfds@asd.com', phone: '555-555-5555' },
+    { id: 12, name: 'Alice Smith', email: 'sfds@asd.com', phone: '555-555-5555' },
   ];
 
   constructor(private router: Router) {
@@ -36,8 +46,9 @@ export class TableComponent implements OnInit{
   }
 
   navigateToDetail(user: any): void {
-    this.router.navigate(['/user', user.id], { state: { user: user } });
-  }
+    console.log(user);
+    this.router.navigate(['/tableDetails', user.id]);
+   }
 
   ngOnInit() {
     this.dtOptions = {
@@ -48,9 +59,19 @@ export class TableComponent implements OnInit{
         { title: 'Name', data: 'name' },
         { title: 'Email', data: 'email' },
         { title: 'Phone', data: 'phone' },
-        {
-          title: 'Action',
-        }
+        { title: 'Action' }
+      ]
+    };
+
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 10,
+      columns: [
+        { title: 'ID', data: 'id' },
+        { title: 'Name', data: 'name' },
+        { title: 'Email', data: 'email' },
+        { title: 'Phone', data: 'phone' },
+        { title: 'Action' }
       ]
     };
   }

@@ -1,45 +1,29 @@
-<!--<table datatable [dtOptions]="dtOptions" class="row-border hover">-->
-<!--  <thead>-->
-<!--    <tr>-->
-<!--      <th>Id</th>-->
-<!--      <th>Name</th>-->
-<!--    </tr>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-<!--    <tr *ngFor="let user of users">-->
-<!--      <td>{{user.id}}</td>-->
-<!--      <td>{{user.name}}</td>-->
-<!--&lt;!&ndash;      <td>{{user.position}}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;      <td>{{user.office}}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;      <td>{{user.age}}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;      <td>{{user.start_date}}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;      <td>{{user.salary}}</td>&ndash;&gt;-->
-<!--    </tr>-->
-<!--  </tbody>-->
-<!--</table>-->
+<h1>table Dynamic</h1>
 
+<div class="table_main">
+  <table datatable [dtOptions]="dtOptions">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phone }}</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="navigateToDetail(user)">
+          View Details
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 
-<table datatable [dtOptions]="dtOptions">
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let user of users">
-    <td>{{ user.id }}</td>
-    <td>{{ user.name }}</td>
-    <td>{{ user.email }}</td>
-    <td>{{ user.phone }}</td>
-    <td>
-      <button type="button" class="btn btn-primary" (click)="navigateToDetail(user)">
-        View Details
-      </button>
-    </td>
-  </tr>
-  </tbody>
-</table>
