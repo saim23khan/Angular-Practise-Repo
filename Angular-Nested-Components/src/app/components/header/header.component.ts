@@ -1,4 +1,4 @@
-import { Component, ContentChildren, QueryList } from '@angular/core';
+import { Component, ContentChildren, Input, QueryList } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +6,5 @@ import { Component, ContentChildren, QueryList } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @ContentChildren('widget')
-  widgets!: QueryList<Component>;
+  @Input() comp!:any;
 }
