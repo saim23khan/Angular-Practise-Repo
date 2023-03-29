@@ -1,0 +1,7 @@
+<div class="my-list" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+  <ul>
+    <li *ngFor="let todo of todos">
+      {{todo.description}}
+    </li>
+  </ul>
+</div>

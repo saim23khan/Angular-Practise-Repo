@@ -38,11 +38,11 @@ export class CommonService {
   }
 
   loginWithGoogle():void{
-    signInWithPopup(this.auth,new GoogleAuthProvider()).then(result=>{
+    signInWithPopup(this.auth,new GoogleAuthProvider()).then((result:any)=>{
       console.log(result.user);
       alert('SignIn With Google');
       this.router.navigateByUrl('').then();
-    }).catch(error=>{
+    }).catch((error:any)=>{
       alert(error);
     });
   }
