@@ -8,43 +8,25 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
 })
 export class DynamicKanbanColumnComponent {
 
-  // mainList = [
-  //   ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'],
-  //   ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog']
-  // ];
+  columns = [
+    {name: 'To do', items: ['Item 1', 'Item 2', 'Item 3']},
+    {name: 'Done', items: ['Item 4', 'Item 5']},
+    {name: 'Delay', items: ['Item 6']},
+    {name: 'Testing', items: []},
+    {name: 'Done To', items: ['Item 7', 'Item 8']}
+  ];
 
-  columns = ['To do', 'In progress', 'Review', 'Testing', 'Done'];
-
-  columnData:any = {
-    'To do': ['Task 1', 'Task 2', 'Task 3'],
-    'In progress': ['Task 4', 'Task 5'],
-    'Review': ['Task 6'],
-    'Testing': [],
-    'Done': ['Task 7']
-  };
-
-  // ...
-
-  getColumnData(column: any) {
-    return this.columnData[column];
-  }
-
-  getConnectedLists(obj: any, column: string) {
-    const keys = Object.keys(obj);
-    const index = keys.indexOf(column);
-    return [
-      index > 0 ? this.getColumnId(keys[index - 1]) : null,
-      index < keys.length - 1 ? this.getColumnId(keys[index + 1]) : null
-    ].filter(id => id != null);
-  }
-
-  getColumnId(column: string) {
-    return column.replace(/\s/g, '').toLowerCase();
+  getConnectedLists(columnName: string): string[] {
+    return this.columns
+      .filter(column => column.name !== columnName)
+      .map(column => column.name.toLowerCase() + 'List');
   }
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
+      console.log("Pereivous Id : "+event.previousContainer.id+"\nPresent: "+event.container.id+"\nDrag Item: "+event.item.data);
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+      console.log("Pereivous Id : "+event.previousContainer.id+"\nPresent: "+event.container.id+"\nDrag Item: "+event.item.data);
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
