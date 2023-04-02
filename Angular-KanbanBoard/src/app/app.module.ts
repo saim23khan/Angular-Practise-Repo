@@ -4,17 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { KanbanComponent } from './kanban/kanban.component';
-import { DragDrop, DragDropModule } from '@angular/cdk/drag-drop';
+import {CdkDropList, DragDrop, DragDropModule} from '@angular/cdk/drag-drop';
+import { DynamicKanbanColumnComponent } from './dynamic-kanban-column/dynamic-kanban-column.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    KanbanComponent
+    KanbanComponent,
+    DynamicKanbanColumnComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DragDropModule
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

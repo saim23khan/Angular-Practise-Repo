@@ -1,0 +1,27 @@
+<div *ngFor="let column of columns" class="example-container">
+  <h2>To do</h2>
+
+  <div
+    cdkDropList
+    [cdkDropListData]="getColumnData(column)"
+    [cdkDropListConnectedTo]="getConnectedLists(column)"
+    [id]="getColumnData(column)"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let d of getColumnData(column)" cdkDrag>{{d}}</div>
+  </div>
+</div>
+
+<!--<div class="example-container">-->
+<!--  <h2>Done</h2>-->
+
+<!--  <div-->
+<!--    cdkDropList-->
+<!--    #doneList="cdkDropList"-->
+<!--    [cdkDropListData]="done"-->
+<!--    [cdkDropListConnectedTo]="[todoList]"-->
+<!--    class="example-list"-->
+<!--    (cdkDropListDropped)="drop($event)">-->
+<!--    <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>-->
+<!--  </div>-->
+<!--</div>-->
+
