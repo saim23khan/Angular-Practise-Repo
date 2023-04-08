@@ -9,6 +9,8 @@
     [cdkDropListConnectedTo]="getConnectedLists(column.name)"
     class="example-list"
     (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of column.items" [cdkDragData]="item" cdkDrag>{{item}}</div>
+    <div class="example-box" *ngFor="let item of column.items" [cdkDragData]="item" cdkDrag>
+      <app-kanban-card [cardItem]="item"></app-kanban-card>
+    </div>
   </div>
 </div>
