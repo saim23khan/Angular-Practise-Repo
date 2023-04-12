@@ -23,6 +23,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SliderComponent } from './slider/slider.component';
+import { ChipsComponent } from './chips/chips.component';
+import {MatChip, MatChipsModule} from '@angular/material/chips';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import { FormsComponent } from './forms/forms.component';
+import { ChipformComponent } from './chipform/chipform.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,10 @@ import { SliderComponent } from './slider/slider.component';
     AddressComponent,
     TableComponent,
     ToolbarComponent,
-    SliderComponent
+    SliderComponent,
+    ChipsComponent,
+    FormsComponent,
+    ChipformComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +59,8 @@ import { SliderComponent } from './slider/slider.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatChipsModule,
+    MatAutocompleteModule,
     // MatCarouselModule
   ],
   providers: [],
