@@ -1,0 +1,5 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <input [formGroup]="formGroup" [formControlName]="controlName"/>
+  <app-chips [formGroup]="formGroup" [controlName]="controlName"></app-chips>
+  <button type="submit">Submit</button>
+</form>
