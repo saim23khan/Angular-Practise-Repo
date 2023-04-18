@@ -1,0 +1,12 @@
+<mat-dialog-content>
+  <form #form="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="Name" [(ngModel)]="role.RoleName" name="RoleName" required>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="role">Save</button>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+</mat-dialog-actions>
