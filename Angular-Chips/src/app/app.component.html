@@ -1,0 +1,5 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <input placeholder="Name" type="name" [formControlName]="'name'" />
+  <app-reusable-chips [controlName]="'chips'" [formGroup]="formGroup" [items]="items"></app-reusable-chips>
+  <button type="submit">Submit</button>
+</form>
