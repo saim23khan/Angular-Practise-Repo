@@ -1,0 +1,46 @@
+@import "node_modules/ngx-chips/core/styles/core/core";
+
+$foundation-primary: #ea0101;
+$foundation-primary-dark: darken($foundation-primary, 10%);
+
+$foundation-theme: (
+  container-border-bottom: 1px solid $foundation-primary
+);
+
+// this is the tag's theme
+$foundation-tag-theme: (
+  background: $foundation-primary,
+  background-focused: $foundation-primary-dark,
+  background-active: $foundation-primary-dark,
+  background-hover: $foundation-primary-dark,
+  color: #fff,
+  color-hover: #fff,
+  border-radius: 2px
+);
+
+$foundation-icon-theme: (
+  fill: #ff3030,
+  fill-focus: #eee,
+  transition: all 0.35s
+);
+
+::ng-deep tag-input .ng2-tag-input.foundation-theme {
+  @include tag-input-theme($foundation-theme);
+}
+
+::ng-deep tag-input .ng2-tag-input.foundation-theme tag {
+  @include tag-theme($foundation-tag-theme);
+}
+
+::ng-deep tag-input .ng2-tag-input.foundation-theme tag delete-icon {
+  @include icon-theme($foundation-icon-theme);
+}
+
+.tag{
+  background: red;
+}
+
+:host ::ng-deep .ng2-tag-input.bootstrap tag{
+  background: red !important;
+}
+
