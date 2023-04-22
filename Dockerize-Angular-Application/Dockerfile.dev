@@ -1,0 +1,21 @@
+FROM node:18.12.1
+ARG WORKDIR=/usr/src/app
+ENV PATH ${WORKDIR}/node_modules/.bin:$PATH
+
+RUN mkdir ${WORKDIR}
+WORKDIR ${WORKDIR}
+
+COPY package.json ${WORKDIR}/package.json
+COPY package-lock.json ${WORKDIR}/package-lock.json
+
+RUN npm install @angular/cli
+RUN npm install
+
+COPY . ${WORKDIR}
+
+EXPOSE 4200
+
+CMD ng serve --host 0.0.0.0
+
+
+# cmd command
