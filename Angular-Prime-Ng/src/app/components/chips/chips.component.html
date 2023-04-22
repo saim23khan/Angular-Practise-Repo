@@ -1,0 +1,68 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+<!--  <div class="card p-fluid">-->
+<!--    <p-chips [formControlName]="'values'" separator="separatorExp" placeholder="Hint: a, b c"></p-chips>-->
+<!--  </div>-->
+
+<!--  <div class="card p-fluid">-->
+<!--    <p-chips  [formControlName]="'values'">-->
+<!--      <ng-template>-->
+
+<!--      </ng-template>-->
+<!--    </p-chips>-->
+<!--  </div>-->
+<!--  <div class="card flex justify-content-center">-->
+<!--    <p-autoComplete formControlName="selectedCountry" [forceSelection]="true" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name">-->
+<!--      <p-chips  [formControlName]="'values'">-->
+<!--      </p-chips>-->
+<!--    </p-autoComplete>-->
+<!--  </div>-->
+  <!--  <p-chips [formControlName]="'selectedItems'" [placeholder]="'Select items'" aria-readonly="true">-->
+<!--    <ng-template let-item pTemplate="item">-->
+<!--      {{item.name}}-->
+<!--    </ng-template>-->
+<!--    <ng-template let-option pTemplate="option">-->
+<!--      {{option.name}}-->
+<!--    </ng-template>-->
+<!--    <p-dropdown [options]="dropdownOptions" [formControlName]="'selectedItems'" [style]="{'width':'100%'}"-->
+<!--                (onChange)="onDropdownChange()"></p-dropdown>-->
+<!--  </p-chips>-->
+
+<!--  <p-chips [(ngModel)]="selectedCountries">-->
+<!--    <ng-template let-country pTemplate="item">-->
+<!--      {{country.name}}-->
+<!--    </ng-template>-->
+<!--    <p-autoComplete [(ngModel)]="searchText" (completeMethod)="search($event)" field="name">-->
+<!--      <ng-template let-country pTemplate="item">-->
+<!--        {{country.name}}-->
+<!--      </ng-template>-->
+<!--    </p-autoComplete>-->
+<!--  </p-chips>-->
+
+  <input type="submit" name="Enter" />
+</form>
+
+
+<!--<p-chips [(ngModel)]="selectedCountries">-->
+<!--  <ng-template let-country pTemplate="item">-->
+<!--    {{country.name}}-->
+<!--  </ng-template>-->
+<!--  <p-autoComplete [(ngModel)]="searchText" [suggestions]="filteredCountries" (completeMethod)="search($event)" field="name">-->
+<!--&lt;!&ndash;    <ng-template let-country pTemplate="item">&ndash;&gt;-->
+<!--&lt;!&ndash;      {{country.name}}&ndash;&gt;-->
+<!--&lt;!&ndash;    </ng-template>&ndash;&gt;-->
+<!--  </p-autoComplete>-->
+<!--</p-chips>-->
+
+
+
+<p-autoComplete [(ngModel)]="selectedCountries" [suggestions]="filteredCountries" field="name" (completeMethod)="filterCountries($event)" multiple="true">
+  <ng-template let-country pTemplate="item">
+    <div class="p-d-flex p-ai-center">
+      <div>{{country.name}}</div>
+    </div>
+  </ng-template>
+</p-autoComplete>
+<div *ngFor="let country of selectedCountries" class="p-d-inline-flex p-ai-center p-my-1 p-mr-1">
+  <span>{{country.title}}</span>
+  <button pButton type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-ml-1" (click)="removeCountry(country)"></button>
+</div>
