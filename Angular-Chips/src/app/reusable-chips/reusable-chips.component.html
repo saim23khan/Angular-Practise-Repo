@@ -1,0 +1,10 @@
+<form [formGroup]="formGroup">
+  <tag-input  [addOnBlur]="true" [clearOnBlur]="true" [theme]="'foundation-theme'" [formGroup]="formGroup" [formControlName]="controlName" [onlyFromAutocomplete]="true">
+    <tag-input-dropdown [showDropdownIfEmpty]="true"
+                        [appendToBody]="true"
+                        [keepOpen]="false"
+                        [dynamicUpdate]="false"
+                        [autocompleteItems]="items">
+    </tag-input-dropdown>
+  </tag-input>
+</form>
