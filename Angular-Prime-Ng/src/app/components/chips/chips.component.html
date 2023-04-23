@@ -52,17 +52,3 @@
 <!--&lt;!&ndash;    </ng-template>&ndash;&gt;-->
 <!--  </p-autoComplete>-->
 <!--</p-chips>-->
-
-
-
-<p-autoComplete [(ngModel)]="selectedCountries" [suggestions]="filteredCountries" field="name" (completeMethod)="filterCountries($event)" multiple="true">
-  <ng-template let-country pTemplate="item">
-    <div class="p-d-flex p-ai-center">
-      <div>{{country.name}}</div>
-    </div>
-  </ng-template>
-</p-autoComplete>
-<div *ngFor="let country of selectedCountries" class="p-d-inline-flex p-ai-center p-my-1 p-mr-1">
-  <span>{{country.title}}</span>
-  <button pButton type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-ml-1" (click)="removeCountry(country)"></button>
-</div>
