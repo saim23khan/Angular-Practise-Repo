@@ -12,7 +12,8 @@ export class AppComponent {
 
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required,this.passwordValidater ]]
     });
   }
 
@@ -27,7 +28,17 @@ export class AppComponent {
     return null;
   }
 
+  passwordValidater(control: { value: string; }) {
+    // password regex pattern
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+    if (control.value && !passwordPattern.test(control.value)) {
+      return { invalidPassword: true };
+    }
+    return null;
+  }
+
   onSubmit() {
     console.log(this.myForm.get('email')?.valid);
+    console.log(this.myForm.get('password')?.valid);
   }
 }

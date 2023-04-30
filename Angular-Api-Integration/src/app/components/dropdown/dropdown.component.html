@@ -1,0 +1,6 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <select formControlName="roles">
+    <option *ngFor="let item of roleService.roleMapped" [value]="item.id">{{item.name}}</option>
+  </select>
+  <input type="submit" value="Send" />
+</form>

@@ -8,15 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import { RoleFormComponent } from './components/role-form/role-form.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    RoleFormComponent
+    RoleFormComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatDialogModule,
     FormsModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     HttpClientModule

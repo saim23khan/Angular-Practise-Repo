@@ -20,7 +20,7 @@ export const displayedColumns: string[] = ['RoleId', 'RoleName', 'RoleStatus', '
 
 
 export class TableComponent implements OnInit{
-  roles: Role[] = [];
+  roles:Role[] = [];
 
   constructor(private dialog: MatDialog, private roleService: RoleService,private changeDetectorRefs: ChangeDetectorRef) {}
 
@@ -30,7 +30,13 @@ export class TableComponent implements OnInit{
     this.roleService.getAll('getallroles').subscribe((roles) => {
       // @ts-ignore
       this.dataSource.data = roles["Data"];
+      // @ts-ignore
+      this.roles = roles["Data"];
     });
+
+
+    console.log("Roles")
+    console.log(this.roles)
   }
 
   getRoles(): void {
