@@ -12,13 +12,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { SimpleTableComponent } from './components/simple-table/simple-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     RoleFormComponent,
-    DropdownComponent
+    DropdownComponent,
+    SimpleTableComponent
   ],
   imports: [
     BrowserModule,
