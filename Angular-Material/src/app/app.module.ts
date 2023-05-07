@@ -28,6 +28,9 @@ import {MatChip, MatChipsModule} from '@angular/material/chips';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import { FormsComponent } from './forms/forms.component';
 import { ChipformComponent } from './chipform/chipform.component';
+import { SelectComponent } from './select/select.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { ChipformComponent } from './chipform/chipform.component';
     SliderComponent,
     ChipsComponent,
     FormsComponent,
-    ChipformComponent
+    ChipformComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +65,8 @@ import { ChipformComponent } from './chipform/chipform.component';
     MatSortModule,
     MatChipsModule,
     MatAutocompleteModule,
+    MatMenuModule,
+    MatDialogModule
     // MatCarouselModule
   ],
   providers: [],
