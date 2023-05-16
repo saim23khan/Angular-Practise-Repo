@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-Firebase-Chat-App';
+
+
+  addForm(forms: any) {
+    console.log(forms.value);
+  }
 }
