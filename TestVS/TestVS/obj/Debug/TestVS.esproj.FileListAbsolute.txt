@@ -1,0 +1,2 @@
+J:\GitHub\Angular-Practise-Repo\TestVS\TestVS\obj\Debug\TestVS.esproj.SuggestedBindingRedirects.cache
+J:\GitHub\Angular-Practise-Repo\TestVS\TestVS\obj\Debug\TestVS.esproj.CoreCompileInputs.cache
