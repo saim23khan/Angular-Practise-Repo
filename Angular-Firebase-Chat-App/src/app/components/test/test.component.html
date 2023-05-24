@@ -1,1 +1,14 @@
-<p>test works!</p>
+<form #form="ngForm" (ngSubmit)="addForm(form)">
+  <input type="text" name="name" placeholder="Enter your name" ngModel><br/>
+  <input type="email" name="email" placeholder="Enter your email" ngModel><br/>
+  <input type="password" name="password" placeholder="Enter your password" ngModel><br/>
+  <button type="submit" >Send</button>
+</form>
+
+<ul>
+  <li *ngFor="let user of formData | async" id="{{user.id}}">
+    {{user.name}} - {{user.email}}
+    <button (click)="updateForm(user.id)">Update</button>
+    <button (click)="deleteForm(user.id)">Delete</button>
+  </li>
+</ul>
