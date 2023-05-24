@@ -1,16 +1,31 @@
-<input type="file" (change)="uploadFile($event)">
+<input type="file" multiple (change)="uploadFile($event)">
+
+<input type="file" multiple (change)="onFileSelected($event)">
+<div *ngFor="let file of selectedFiles">
+  <ng-container [ngSwitch]="getFileType(file)">
+    <img *ngSwitchCase="'image'" [src]="getSafeUrl(file)">
+    <a *ngSwitchCase="'application'" [href]="getSafeUrl(file)" target="_blank">{{ file.name }}</a>
+    <a *ngSwitchDefault [href]="getSafeUrl(file)" download>{{ file.name }}</a>
+  </ng-container>
+</div>
+
+<div class="imagePreview" *ngIf="imageURL && imageURL.length != 0">
+  <img *ngFor="let img of imageURL" [src]="imageURL" [alt]="uploadForm.value.name">
+</div>
+
+<div class="imagePreview" *ngIf="url && url !== ''">
+  <img [src]="url" [alt]="">
+</div>
 
 
-<img [src]="url" *ngIf="url != null" />
-
-<form [formGroup]="uploadForm" (ngSubmit)="submit()">
+<!-- <form [formGroup]="uploadForm" (ngSubmit)="submit()"> -->
   <!-- Select File -->
-  <input type="file" accept="image/*" (change)="showPreview($event)" />
+  <!-- <input type="file" accept="image/*" (change)="showPreview($event)" /> -->
   <!-- Image Preview -->
-  <div class="imagePreview" *ngIf="imageURL && imageURL !== ''">
+  <!-- <div class="imagePreview" *ngIf="imageURL && imageURL !== ''">
     <img [src]="imageURL" [alt]="uploadForm.value.name">
-  </div>
+  </div> -->
   <!-- Assign Image Alt -->
-  <input formControlName="name" placeholder="Enter name">
+  <!-- <input formControlName="name" placeholder="Enter name">
   <button type="submit">Submit</button>
-</form>
+</form> -->
