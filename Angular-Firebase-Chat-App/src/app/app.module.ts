@@ -28,8 +28,8 @@ import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    // provideStorage(() => getStorage()),
-    AngularFireStorageModule,
+    provideStorage(() => getStorage()),
+    // AngularFireStorageModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
