@@ -25,23 +25,23 @@ export class ImageUploaderComponent implements OnInit {
   // Image Preview
 
   public url!:string;
-  async uploadFile(event:any) {
-    // @ts-ignore
-    let file = (event.target as HTMLInputElement).files;
-    let fileData;
-    for (let i = 0; i < file!.length; i++) {
-      // if(file![i]){
-        fileData = file![i];
-        let reader = new FileReader();
-        reader.onload = (fileData) => {
-          this.imageURL[i] = reader.result?.toString()!;
-        }
-        reader.readAsDataURL(fileData);
-        console.log(fileData);
-        // await this.upload(file);
-      // }
-    }
-  }
+  // async uploadFile(event:any) {
+  //   // @ts-ignore
+  //   let file = (event.target as HTMLInputElement).files;
+  //   let fileData;
+  //   for (let i = 0; i < file!.length; i++) {
+  //     // if(file![i]){
+  //       fileData = file![i];
+  //       let reader = new FileReader();
+  //       reader.onload = (fileData) => {
+  //         this.imageURL[i] = reader.result?.toString()!;
+  //       }
+  //       reader.readAsDataURL(fileData);
+  //       console.log(fileData);
+  //       // await this.upload(file);
+  //     // }
+  //   }
+  // }
 
   selectedFiles: File[] = [];
 
@@ -52,8 +52,7 @@ export class ImageUploaderComponent implements OnInit {
   async onFileSelected(event: any) {
     this.selectedFiles = event.target.files;
     for (let i = 0; i < this.selectedFiles.length; i++) {
-      console.log(this.getFileType(this.selectedFiles[i]));
-      // await this.upload(this.selectedFiles[i]);ss
+      await this.upload(this.selectedFiles[i]);
     }
   }
 
@@ -63,10 +62,23 @@ export class ImageUploaderComponent implements OnInit {
   }
 
   async upload(file:any){
-    const filePath = `images/${file.name}`;
-    const task = await this.angularFireStorage.upload(filePath, file);
-    const url = await task.ref.getDownloadURL();
-    this.url = url;
+    let filePath!:string;
+    if(this.getFileType(file) === 'image'){
+      filePath = `images/${file.name}`;
+    }else if(this.getFileType(file) === 'application'){
+      if(this.getFileExtension(file.name) === 'pdf'){
+        filePath = `files/pdfs/${file.name}`;
+      }else if(this.getFileExtension(file.name) === 'docx'){
+        filePath = `files/docs/${file.name}`;
+      }else if(this.getFileExtension(file.name) === 'xlsx'){
+        filePath = `files/excel/${file.name}`;
+      }else if(this.getFileExtension(file.name) === 'pptx'){
+        filePath = `files/ppt/${file.name}`;
+      }
+    }
+    let task = await this.angularFireStorage.upload(filePath, file);
+    let url = await task.ref.getDownloadURL();
+    return url != null ? url : '';
   }
 
   //write function that return type of file
