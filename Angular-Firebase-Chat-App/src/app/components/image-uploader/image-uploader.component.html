@@ -1,6 +1,7 @@
-<input type="file" multiple (change)="uploadFile($event)">
+<!-- <input type="file" multiple (change)="uploadFile($event)"> -->
 
 <input type="file" multiple (change)="onFileSelected($event)">
+<!-- final solution -->
 <div *ngFor="let file of selectedFiles">
   <ng-container [ngSwitch]="getFileType(file)">
     <img *ngSwitchCase="'image'" [src]="getSafeUrl(file)">
@@ -10,7 +11,7 @@
 </div>
 
 <div class="imagePreview" *ngIf="imageURL && imageURL.length != 0">
-  <img *ngFor="let img of imageURL" [src]="imageURL" [alt]="uploadForm.value.name">
+  <img *ngFor="let img of imageURL" [src]="imageURL" [alt]="">
 </div>
 
 <div class="imagePreview" *ngIf="url && url !== ''">
