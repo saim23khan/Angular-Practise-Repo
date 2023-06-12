@@ -12,36 +12,13 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 export class ImageUploaderComponent implements OnInit {
 
   imageURL: string[] = [];
-  uploadForm: FormGroup;
-  constructor(public fb: FormBuilder,private angularFireStorage:AngularFireStorage,private sanitizer: DomSanitizer) {
-    // Reactive Form
-    this.uploadForm = this.fb.group({
-      avatar: [null],
-      name: ['']
-    })
-  }
+  constructor(public fb: FormBuilder,private angularFireStorage:AngularFireStorage,private sanitizer: DomSanitizer) {}
+
   ngOnInit(): void { }
 
   // Image Preview
 
   public url!:string;
-  // async uploadFile(event:any) {
-  //   // @ts-ignore
-  //   let file = (event.target as HTMLInputElement).files;
-  //   let fileData;
-  //   for (let i = 0; i < file!.length; i++) {
-  //     // if(file![i]){
-  //       fileData = file![i];
-  //       let reader = new FileReader();
-  //       reader.onload = (fileData) => {
-  //         this.imageURL[i] = reader.result?.toString()!;
-  //       }
-  //       reader.readAsDataURL(fileData);
-  //       console.log(fileData);
-  //       // await this.upload(file);
-  //     // }
-  //   }
-  // }
 
   selectedFiles: File[] = [];
 
@@ -84,5 +61,9 @@ export class ImageUploaderComponent implements OnInit {
   //write function that return type of file
   getFileType(file: File): string {
     return file.type.split('/')[0];
+  }
+
+  delete(index: number) {
+    this.imageURL.splice(index, 1);
   }
 }
