@@ -39,7 +39,7 @@ export class ProjectsService extends ApiService<ProjectDetails> {
 
   constructor(http: HttpClient) {
     super(http);
-    this.apiUrl = 'https://localhost:7059/api/';
+    this.apiUrl = 'http://192.168.1.109:7059/api/';
     this.apiController = 'project';
   }
 }

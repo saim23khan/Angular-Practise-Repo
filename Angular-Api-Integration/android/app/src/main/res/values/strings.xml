@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">angular-api-integration</string>
+    <string name="title_activity_main">angular-api-integration</string>
+    <string name="package_name">com.apiintegration.com</string>
+    <string name="custom_url_scheme">com.apiintegration.com</string>
+</resources>
