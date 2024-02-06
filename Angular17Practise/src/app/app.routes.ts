@@ -3,5 +3,5 @@ import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
     {path:'',component: HomeComponent},
-    {path:'customer', loadChildren: () => import('./components/customer/customer.component').then(m => m.CustomerComponent)},
+    {path:'customer', loadComponent: () => import('./components/customer/customer.component').then(m => m.CustomerComponent)},
 ];
