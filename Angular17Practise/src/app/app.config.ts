@@ -8,9 +8,10 @@ import { tokenInterceptor } from './_service/token.interceptor';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { ProductReducer } from './_store/Products/Products.Reducer';
+import { ProductEffects } from './_store/Products/Products.Effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideAnimationsAsync(),
     provideHttpClient(withInterceptors([tokenInterceptor])),
-     provideStore({'products':ProductReducer}), provideEffects()]
+     provideStore({'products':ProductReducer}), provideEffects([ProductEffects])]
 };

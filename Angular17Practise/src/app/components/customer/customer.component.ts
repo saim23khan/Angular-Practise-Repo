@@ -5,6 +5,9 @@ import { Products } from '../../_model/products';
 import { MaterialModule } from '../../_module/Material.Module';
 import { MatTableDataSource } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { loadProducts } from '../../_store/Products/Products.Actions';
+import { getProductsList } from '../../_store/Products/Products.Selector';
 
 @Component({
   selector: 'app-customer',
@@ -18,14 +21,15 @@ export class CustomerComponent implements OnInit{
   productList!:Products[];
   datasource:any;
   columns = ['Pid','Name','Description','Price','Quantity','CreatedOn','Cid','ProductStatus'];
-  constructor(public postService:MasterService) { }
+  constructor(public store:Store) { }
   
   ngOnInit(): void {
     this.loadData();  
   }
   loadData() {
-    this.postService.getAllProducts().subscribe((data:any)=>{
-      this.productList = data["Data"];
+    this.store.dispatch(loadProducts());
+    this.store.select(getProductsList).subscribe((data:any)=>{
+      this.productList = data;
       this.datasource = new MatTableDataSource(this.productList);
     });
   }
