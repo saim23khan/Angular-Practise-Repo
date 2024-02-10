@@ -13,4 +13,8 @@ export class MasterService {
   getAllProducts(){
     return this.http.get<Products[]>('https://localhost:7120/api/Products/GetProducts');
   }
+
+  hasaccess(){
+    return true;
+  }
 }
