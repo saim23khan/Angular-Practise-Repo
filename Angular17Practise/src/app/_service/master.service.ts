@@ -14,6 +14,22 @@ export class MasterService {
     return this.http.get<Products[]>('https://localhost:7120/api/Products/GetProducts');
   }
 
+  getProductsById(id:number){
+    return this.http.get<Products>('https://localhost:7120/api/Products/GetProduct/'+id);
+  }
+
+  postProducts(product:Products){
+    return this.http.post('https://localhost:7120/api/Products/AddProduct',product);
+  }
+
+  updateProducts(product:Products){
+    return this.http.put('https://localhost:7120/api/Products/UpdateProduct',product);
+  }
+
+  deleteProducts(id:number){
+    return this.http.delete('https://localhost:7120/api/Products/DeleteProduct/'+id);
+  }
+
   hasaccess(){
     return true;
   }
