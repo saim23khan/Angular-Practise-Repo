@@ -1,0 +1,51 @@
+<p>for works!</p>
+
+@for(emp of employees;track emp.id){
+    <p>{{emp.id}} - {{emp.name}}</p>
+}@empty {
+    <p>No employees found</p>
+}
+
+
+@for(emp of employees;let i = $index;let e = $even;let o = $odd;let f = $first;let l = $last;track emp.id){
+    @if(f == true){
+        <span> <p style="background-color: yellow;">{{i}} - {{emp.id}} - {{emp.name}}</p></span>
+    }@else if(l == true){
+        <span> <p style="background-color: blue;">{{i}} - {{emp.id}} - {{emp.name}}</p></span>
+    }@else if(o == true){
+        <span> <p style="background-color: green;">{{i}} - {{emp.id}} - {{emp.name}}</p></span>
+    }@else if (e ==true) {
+        <span> <p style="background-color: red;">{{i}} - {{emp.id}} - {{emp.name}}</p></span>
+    }@else {
+        <span> <p>{{i}} - {{emp.id}} - {{emp.name}}</p></span>
+    }
+}@empty {
+    <p>No employees found</p>
+}
+
+<h1>Table</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>S.NO</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(emp of employees;let i=$index;track emp.id){
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.age}}</td>
+            </tr>
+        }@empty {
+            <tr>
+                <td colspan="2">No employees found</td>
+            </tr>
+        }
+    </tbody>
+</table>

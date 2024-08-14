@@ -1,0 +1,6 @@
+<p>parent works!</p>
+
+<input type="text" placeholder="enter" #metaData (keyup)="0"/>
+
+<app-child (childEmitter)="getData($event)" [pKey]="metaData.value"></app-child>
+<p>Child Val : {{childVal}}</p>
